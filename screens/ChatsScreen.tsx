@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
 import ChatListItem from '../components/ChatListItem/';
 import ChatRooms from '../data/ChatRooms';
@@ -8,7 +8,12 @@ import Chats from '../data/Chats';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <ChatListItem chatRoom={ChatRooms[0]}/>
+      <FlatList 
+      style={{width: '100%'}}
+      data={ChatRooms}
+      renderItem={({item}) => <ChatListItem chatRoom={item} />}
+      keyExtractor={(item)=> item.id}
+      />
     </View>
   );
 }
