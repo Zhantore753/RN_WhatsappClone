@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     lastMessage:{
-        maxWidth: 225,
+        maxWidth: 185,
         fontSize: 14,
         color: 'grey'
     },

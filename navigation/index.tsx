@@ -1,14 +1,20 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, View } from 'react-native';
-import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { ColorSchemeName, View, Image, Text, TouchableWithoutFeedback } from 'react-native';
+import { 
+  Octicons, 
+  MaterialCommunityIcons, 
+  MaterialIcons, 
+  FontAwesome5 } from '@expo/vector-icons'; 
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from '../constants/Colors';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
+import {useNavigation} from '@react-navigation/native';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -58,6 +64,67 @@ function RootNavigator() {
         )
           
       }}
+      />
+      <Stack.Screen 
+      name="ChatRoom" 
+      component={ChatRoomScreen} 
+      options={({route}) => {
+        // const navigation = useNavigation();
+        // const backClick = () =>{
+        //     navigation.navigate('Root');
+        // };
+        return({
+         title: ()=>(<Text>route.params.name</Text>),
+         headerLeft: () => (
+            <View
+            style={{
+              flexDirection: 'row',
+              width: 'auto', 
+              justifyContent: 'space-between'
+              }}>
+              <TouchableWithoutFeedback onPress={route.params.backBut}>
+                <View style={{
+                  paddingTop: 7,
+                  paddingLeft: 5
+                }}>
+                  <MaterialCommunityIcons name="arrow-left"size={24} color="white"/>
+                </View>
+              </TouchableWithoutFeedback>
+              <View style={{
+                paddingLeft: 5
+              }}>
+              <Image source={{ uri: route.params.uri}} style={{
+                width: 40,
+                height: 40,
+                marginRight: 15,
+                borderRadius: 50,
+                }} 
+              />
+              </View>
+              <View><Text style={{
+                textAlignVertical: 'center',
+                color: '#fff',
+                fontSize: 20,
+                fontWeight: 'bold',
+                paddingTop: 5
+              }}>{route.params.name}</Text></View>
+              
+            </View>
+          ),
+         headerRight: () => (
+           <View 
+           style={{
+            flexDirection: 'row', 
+            width: 110, 
+            justifyContent: 'space-between', 
+            marginRight: 10
+            }}>
+              <FontAwesome5 name="video" size={22} color="white"/>
+              <MaterialIcons name="call" size={22} color="white"/>
+              <MaterialCommunityIcons name="dots-vertical" size={22} color="white"/>
+           </View>
+         ),
+        })}}
       />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
