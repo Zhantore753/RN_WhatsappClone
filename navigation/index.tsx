@@ -1,7 +1,10 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, View, Image, Text, TouchableWithoutFeedback } from 'react-native';
+import { ColorSchemeName, View, Image, Text,
+  TouchableWithoutFeedback,
+  TouchableHighlight 
+} from 'react-native';
 import { 
   Octicons, 
   MaterialCommunityIcons, 
@@ -69,10 +72,7 @@ function RootNavigator() {
       name="ChatRoom" 
       component={ChatRoomScreen} 
       options={({route}) => {
-        // const navigation = useNavigation();
-        // const backClick = () =>{
-        //     navigation.navigate('Root');
-        // };
+        const backClick = route.params.backBut;
         return({
          title: ()=>(<Text>route.params.name</Text>),
          headerLeft: () => (
@@ -82,14 +82,16 @@ function RootNavigator() {
               width: 'auto', 
               justifyContent: 'space-between'
               }}>
-              <TouchableWithoutFeedback onPress={route.params.backBut}>
+              <TouchableHighlight
+              style={{paddingLeft:5, paddingRight:5, borderRadius: 60}}
+              underlayColor={'#10897B'} onPress={backClick}>
                 <View style={{
                   paddingTop: 7,
                   paddingLeft: 5
                 }}>
                   <MaterialCommunityIcons name="arrow-left"size={24} color="white"/>
                 </View>
-              </TouchableWithoutFeedback>
+              </TouchableHighlight>
               <View style={{
                 paddingLeft: 5
               }}>
