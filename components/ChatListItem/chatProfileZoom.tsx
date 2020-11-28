@@ -4,7 +4,8 @@ import { View,
     Image,
     Alert,
     TouchableHighlight,
-    Modal
+    Modal,
+    ImageBackground 
 } from 'react-native';
 import styles from './style';
 import { FontAwesome5,
@@ -24,19 +25,24 @@ const ChatProfileZoom = ({user, modalVisible, setModalVisible}) =>{
         >
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
-                    <View style={styles.modalHead}>
-                        <Text style={styles.usernameZoom}>{user.name}</Text>
-                        <TouchableHighlight
-                        underlayColor={'gray'}
-                        style={{paddingLeft:5, paddingRight:5, borderRadius: 60}}
-                        onPress={() => {
-                            setModalVisible(!modalVisible);
-                        }}
-                        >
-                            <FontAwesome5 style={{textAlign:"center", textAlignVertical:"center"}} name="times" color="#fff" size={24}></FontAwesome5>
-                        </TouchableHighlight>
-                    </View>
-                    <Image source={{ uri: user.imageUri }} style={styles.avatarZoom}/>
+                    
+                    <ImageBackground source={{ uri: user.imageUri }} style={{width: 250, height: 250}}>
+
+                        <View style={styles.modalHead}>
+                            <Text style={styles.usernameZoom}>{user.name}</Text>
+                            <TouchableHighlight
+                            underlayColor={'rgba(0, 0, 0, 0.3)'}
+                            style={{paddingLeft:5, paddingRight:5, borderRadius: 60}}
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                            }}
+                            >
+                                <FontAwesome5 style={{textAlign:"center", textAlignVertical:"center"}} name="times" color="#fff" size={24}></FontAwesome5>
+                            </TouchableHighlight>
+                            </View>
+                    </ImageBackground>
+                    
+                    {/* <Image source={{ uri: user.imageUri }} style={styles.avatarZoom}/> */}
                     
                     <View style={styles.modalFooter}>
                         <TouchableHighlight

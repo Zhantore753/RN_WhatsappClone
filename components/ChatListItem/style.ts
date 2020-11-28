@@ -16,9 +16,17 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         flex: 1,
         justifyContent: 'space-between',
-        paddingBottom: 10,
-        borderBottomWidth: 0.5,
-        borderBottomColor: '#ccc',
+        
+        
+    },
+    rightContainerIn:{
+      flexDirection:'row',
+      justifyContent: 'space-between',
+      maxWidth:'100%',
+      minWidth:'100%',
+      borderBottomWidth: 0.5,
+      borderBottomColor: '#ccc',
+      paddingBottom: 18,
     },
     avatar:{
         width: 60,
@@ -83,8 +91,8 @@ const styles = StyleSheet.create({
       modalHead:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor: '#ccc',
-        paddingVertical: 2,
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        paddingVertical: 5,
         paddingHorizontal: 10,
       },
       modalFooter:{

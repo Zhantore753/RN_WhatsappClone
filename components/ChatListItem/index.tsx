@@ -42,26 +42,33 @@ const ChatListItem = ( props: ChatListItemProps ) => {
                     onPress={() => {
                         setModalVisible(true);
                     }}>
+                    
                     <View style={styles.leftContainer}>
                         <Image source={{ uri: user.imageUri }} style={styles.avatar}/>
                     </View>
                 </TouchableHighlight>
 
-
                 <ChatProfileZoom user={user} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
 
 
-                <TouchableWithoutFeedback onPress={onClick}>
-                    <View style={styles.rightContainer}>
-                        <View style={styles.midContainer}>
-                            <Text style={styles.username}>{user.name}</Text>
-                            <Text numberOfLines={1} style={styles.lastMessage}>{chatRoom.lastMessage.content}</Text>
+                
+                <View style={styles.rightContainer}>
+                    <TouchableHighlight
+                        underlayColor={'rgba(0, 0, 0, 0.1)'}
+                        onPress={onClick}>
+                        <View style={styles.rightContainerIn}>
+                            <View style={styles.midContainer}>
+                                <Text style={styles.username}>{user.name}</Text>
+                                <Text numberOfLines={1} style={styles.lastMessage}>{chatRoom.lastMessage.content}</Text>
+                            </View>
+                            <Text style={styles.time}>
+                                {moment(chatRoom.lastMessage.createdAt).format("DD/MM/YYYY")}
+                            </Text>
                         </View>
-                        <Text style={styles.time}>
-                            {moment(chatRoom.lastMessage.createdAt).format("DD/MM/YYYY")}
-                        </Text>
-                    </View>
-                </TouchableWithoutFeedback>
+                        
+                    </TouchableHighlight>
+                </View>
+                
                 {/* <Text>{chatRoom.lastMessage.createdAt}</Text> */}
                 
             </View>

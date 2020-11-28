@@ -83,11 +83,11 @@ function RootNavigator() {
               justifyContent: 'space-between'
               }}>
               <TouchableHighlight
-              style={{paddingLeft:5, paddingRight:5, borderRadius: 60}}
+              style={{paddingLeft:8, paddingRight:8, borderRadius: 60}}
               underlayColor={'#10897B'} onPress={backClick}>
                 <View style={{
+                  alignItems: 'center',
                   paddingTop: 7,
-                  paddingLeft: 5
                 }}>
                   <MaterialCommunityIcons name="arrow-left"size={24} color="white"/>
                 </View>
