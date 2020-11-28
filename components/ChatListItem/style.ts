@@ -4,10 +4,11 @@ const styles = StyleSheet.create({
     container:{
         flexDirection:'row',
         width: '100%',
-        padding: 10,
+        // padding:10
     },
     leftContainer:{
         flexDirection: 'row',
+        // marginTop: 8,
     },
     midContainer:{
         justifyContent: 'space-around',
@@ -26,7 +27,9 @@ const styles = StyleSheet.create({
       minWidth:'100%',
       borderBottomWidth: 0.5,
       borderBottomColor: '#ccc',
-      paddingBottom: 18,
+      paddingBottom: 20,
+      paddingTop: 13,
+      paddingRight: 10,
     },
     avatar:{
         width: 60,
@@ -77,7 +80,9 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         width: 60,
         height: 60,
-        marginRight: 10,
+        marginRight: 15,
+        marginTop: 12,
+        marginLeft: 10
       },
       textStyle: {
         color: "white",

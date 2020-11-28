@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { View,
     Text,
     Image,
-    TouchableWithoutFeedback,
     TouchableHighlight,
 } from 'react-native';
 import { ChatRoom } from '../../types';
 import styles from './style';
 import moment from 'moment';
 import {useNavigation} from '@react-navigation/native';
+import Ripple from 'react-native-material-ripple';
 import ChatProfileZoom from './chatProfileZoom';
 
 export type ChatListItemProps = {
@@ -53,8 +53,9 @@ const ChatListItem = ( props: ChatListItemProps ) => {
 
                 
                 <View style={styles.rightContainer}>
-                    <TouchableHighlight
-                        underlayColor={'rgba(0, 0, 0, 0.1)'}
+                    <Ripple
+                        rippleColor="rgba(0, 0, 0, 0.3)"
+                        rippleDuration={600}
                         onPress={onClick}>
                         <View style={styles.rightContainerIn}>
                             <View style={styles.midContainer}>
@@ -66,7 +67,7 @@ const ChatListItem = ( props: ChatListItemProps ) => {
                             </Text>
                         </View>
                         
-                    </TouchableHighlight>
+                    </Ripple>
                 </View>
                 
                 {/* <Text>{chatRoom.lastMessage.createdAt}</Text> */}

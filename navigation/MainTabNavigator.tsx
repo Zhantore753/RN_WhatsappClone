@@ -99,7 +99,7 @@ function TabTwoNavigator() {
         name="TabTwoScreen"
         component={TabTwoScreen}
         options={{ 
-          headerTitle: 'Tab Two Title'
+          headerTitle: ''
         }}
       />
     </TabTwoStack.Navigator>

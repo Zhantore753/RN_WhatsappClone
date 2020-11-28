@@ -83,7 +83,7 @@ function RootNavigator() {
               justifyContent: 'space-between'
               }}>
               <TouchableHighlight
-              style={{paddingLeft:8, paddingRight:8, borderRadius: 60}}
+              style={{marginLeft:4 ,paddingLeft:8, paddingRight:8, borderRadius: 60}}
               underlayColor={'#10897B'} onPress={backClick}>
                 <View style={{
                   alignItems: 'center',
