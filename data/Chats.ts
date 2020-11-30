@@ -1,5 +1,6 @@
 export default {
 	id: '1',
+	isGroup: false,
 	users: [{
 		id: 'u1',
 		name: 'Vadim',
