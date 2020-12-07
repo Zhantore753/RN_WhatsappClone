@@ -15,19 +15,20 @@ const ChatMessage = (props: ChatMessageProps) => {
     const isMyMessage = () =>{
         return message.user.id === 'u1';
     };
+
     return( 
         <View style={styles.container}>
             <View style={[
                 styles.messageBox, {
                     backgroundColor: isMyMessage() ? '#DCF8C5' : 'white',
                     // alignSelf: isMyMessage() ? 'flex-end' : 'auto',
-                    marginLeft: isMyMessage() ? 70 : 0,
+                    marginLeft: isMyMessage() ? '20%' : 0,
                 }
             ]}>
                 {group && !isMyMessage() && <Text style={styles.name}>{message.user.name}</Text>}
                 <View style={styles.messageIn}>
                     <Text style={styles.message}>{message.content}</Text>
-                    <Text style={styles.time}>{moment(message.createdAt).fromNow()}</Text>
+                    <Text style={styles.time}>{moment(message.createdAt).format('HH:mm')}</Text>
                 </View>
             </View>
         </View>

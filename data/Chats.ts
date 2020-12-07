@@ -12,7 +12,7 @@ export default {
 	}],
 	messages: [{
 		id: 'm1',
-		content: 'How are you, Lukas!',
+		content: 'Привет, как дела?',
 		createdAt: '2020-10-10T12:48:00.000Z',
 		user: {
 			id: 'u1',
@@ -20,7 +20,7 @@ export default {
 		},
 	}, {
 		id: 'm2',
-		content: 'I am good, good',
+		content: 'Привет, у меня все отлично',
 		createdAt: '2020-10-03T14:49:00.000Z',
 		user: {
 			id: 'u2',
@@ -28,7 +28,7 @@ export default {
 		},
 	}, {
 		id: 'm3',
-		content: 'What about you?',
+		content: 'Сам как?',
 		createdAt: '2020-10-03T14:49:40.000Z',
 		user: {
 			id: 'u2',
@@ -36,7 +36,7 @@ export default {
 		},
 	}, {
 		id: 'm4',
-		content: 'Good as well, preparing for the stream now.',
+		content: 'Да все отлично, вот делаю копию WhatApp',
 		createdAt: '2020-10-03T14:50:00.000Z',
 		user: {
 			id: 'u1',
@@ -44,7 +44,7 @@ export default {
 		},
 	}, {
 		id: 'm5',
-		content: 'How is your uni going?',
+		content: "Правда есть небольшие трудности с backend'ом",
 		createdAt: '2020-10-03T14:51:00.000Z',
 		user: {
 			id: 'u1',
@@ -52,7 +52,7 @@ export default {
 		},
 	}, {
 		id: 'm6',
-		content: 'It is a bit tough, as I have 2 specializations. How about yours? Do you enjoy it?',
+		content: 'Да но не отчаяевайся у тебя все получится',
 		createdAt: '2020-10-03T14:49:00.000Z',
 		user: {
 			id: 'u2',
@@ -60,7 +60,31 @@ export default {
 		},
 	}, {
 		id: 'm7',
-		content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+		content: 'Огромное спасибо тебе за поддержку уже потратил около недели а сделал лишь основные части fronta, это не есть здорово',
+		createdAt: '2020-10-03T14:53:00.000Z',
+		user: {
+			id: 'u1',
+			name: 'Vadim',
+		},
+	}, {
+		id: 'm8',
+		content: 'Надеюсь закончить до нового года. Сможешь потом протестировать приложение',
+		createdAt: '2020-10-03T14:51:00.000Z',
+		user: {
+			id: 'u1',
+			name: 'Vadim',
+		},
+	}, {
+		id: 'm9',
+		content: 'Да конечно! Звучит очень интересно',
+		createdAt: '2020-10-03T14:49:00.000Z',
+		user: {
+			id: 'u2',
+			name: 'Lukas',
+		},
+	}, {
+		id: 'm10',
+		content: 'Спасибо. Жди я напишу когда будет все готово',
 		createdAt: '2020-10-03T14:53:00.000Z',
 		user: {
 			id: 'u1',

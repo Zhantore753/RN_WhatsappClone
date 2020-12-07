@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         position:'absolute',
         fontSize: 12,
         color: 'grey',
-        left: '73%',
-        bottom: -7,
+        right: -5,
+        bottom: -10,
     },
 });
 
